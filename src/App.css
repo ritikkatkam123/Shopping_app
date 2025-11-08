@@ -1,38 +1,186 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+  background-color: #f9fafb;
+  margin: 0;
+  padding: 0;
+  color: #222;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Shoe List */
+.shoe-list {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 24px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.shoe-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.shoe-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.shoe-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.shoe-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.shoe-item p {
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.shoe-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  background-color: #fff;
+  transition: 0.2s ease;
+}
+
+.shoe-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.shoe-image {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 8px;
+}
+
+/* Cart */
+.cart {
+  flex: 0.8;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #fff;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cart-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Buttons */
+.btn {
+  cursor: pointer;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #007bff;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-primary:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  padding: 5px 8px;
+}
+
+.btn-danger:hover {
+  background-color: #a71d2a;
+}
+
+.btn-remove {
+  background-color: #6c757d;
+  color: white;
+  padding: 5px 8px;
+}
+
+.btn-remove:hover {
+  background-color: #5a6268;
+}
+
+.btn-small {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+}
+.total {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: right;
+  margin-top: 15px;
+}
+.cart {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
   }
-  to {
-    transform: rotate(360deg);
+  h1, h2, h3, h4 {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  background-color: #2563eb;
+  color: #fff;
+  font-weight: 500;
+  transition: background-color 0.25s ease;
+}
+button:hover {
+  background-color: #1d4ed8;
+}
+button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .cart {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
   }
 }
